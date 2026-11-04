@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,41 +8,6 @@
         content="Portfolio of Nikunjkumar Savaliya — BCA student, retail sales professional, and emerging business analyst based in Navsari, Gujarat.">
     <meta name="theme-color" content="#f5f7f4">
     <title>Nikunjkumar Savaliya</title>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b'
-                        },
-                        slate: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -52,939 +17,299 @@
 
     <!-- AOS (Animate On Scroll) Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        :root {
-            --ink: #0f172a;
-            --paper: #f8fafc;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--paper);
-            color: var(--ink);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Subtle grid background mask */
-        .bg-grid-pattern {
-            background-image:
-                radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 0);
-            background-size: 28px 28px;
-        }
-
-        /* Neobrutalist hover offset cards with Emerald Accent */
-        .neo-card {
-            box-shadow: 6px 6px 0px 0px #0f172a;
-            transition: all 0.3s var(--ease-out);
-        }
-
-        .neo-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 10px 10px 0px 0px #059669;
-        }
-
-        /* Portrait Card Styling */
-        .portrait-frame {
-            position: relative;
-            box-shadow: 12px 12px 0px 0px #0f172a;
-            transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
-        }
-
-        .portrait-frame:hover {
-            transform: translateY(-4px) rotate(0.5deg);
-            box-shadow: 16px 16px 0px 0px #059669;
-        }
-
-        /* Smooth scroll progress bar top line */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #059669, #10b981);
-            z-index: 100;
-            width: 0%;
-            transition: width 0.1s ease-out;
-        }
-
-        /* Refined, responsive portfolio system */
-        :root {
-            color-scheme: light;
-            --ink: #17231f;
-            --muted: #65736c;
-            --line: #dfe7e1;
-            --paper: #f5f7f4;
-            --surface: #ffffff;
-            --accent: #08785e;
-            --accent-dark: #075c49;
-            --accent-soft: #e7f3ed;
-            --shadow-soft: 0 16px 44px rgba(23, 35, 31, .075);
-            --shadow-lift: 0 24px 54px rgba(23, 35, 31, .13);
-            --content-gutter: clamp(1rem, 5vw, 3.25rem);
-            --ease-out: cubic-bezier(.2, .75, .25, 1);
-        }
-
-        html {
-            scroll-padding-top: 6rem;
-        }
-
-        body {
-            color: var(--ink);
-            background: var(--paper);
-            font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-            line-height: 1.65;
-            overflow-x: clip;
-        }
-
-        ::selection {
-            color: #fff;
-            background: var(--accent);
-        }
-
-        a,
-        button,
-        input,
-        textarea {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :focus-visible {
-            outline: 3px solid #38a985;
-            outline-offset: 4px;
-        }
-
-        .bg-grid-pattern {
-            background-color: var(--paper);
-            background-image:
-                radial-gradient(rgba(29, 65, 51, .09) .7px, transparent .7px),
-                radial-gradient(ellipse at 75% 3%, rgba(8, 120, 94, .07), transparent 34rem);
-            background-size: 24px 24px, auto;
-        }
-
-        #main-header {
-            background: rgba(250, 252, 250, .86) !important;
-            border-color: rgba(216, 227, 219, .8) !important;
-            box-shadow: 0 6px 28px rgba(23, 35, 31, .045);
-            -webkit-backdrop-filter: blur(18px);
-            backdrop-filter: blur(18px);
-        }
-
-        #main-header>div:first-child {
-            width: min(100%, 88rem);
-            min-height: 4.75rem;
-            padding-inline: var(--content-gutter);
-        }
-
-        #main-header>div:first-child>a {
-            font-size: clamp(1rem, 1.5vw, 1.3rem);
-            letter-spacing: -.055em;
-        }
-
-        #main-header nav {
-            gap: clamp(.85rem, 1.6vw, 1.55rem);
-        }
-
-        #main-header nav a {
-            position: relative;
-            color: #53635b;
-            font-size: .76rem;
-            letter-spacing: .01em;
-            transition: color .2s ease;
-        }
-
-        #main-header nav a::after {
-            position: absolute;
-            right: 0;
-            bottom: -.55rem;
-            left: 0;
-            height: 2px;
-            content: "";
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .25s var(--ease-out);
-        }
-
-        #main-header nav a:hover::after {
-            transform: scaleX(1);
-        }
-
-        .neo-card,
-        .neo-card:hover {
-            box-shadow: var(--shadow-soft) !important;
-            transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s ease, background-color .3s ease;
-        }
-
-        .neo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lift) !important;
-        }
-
-        main section {
-            scroll-margin-top: 5.75rem;
-        }
-
-        main section:not(#about) {
-            padding-block: clamp(4.25rem, 8vw, 7rem);
-        }
-
-        main section>.max-w-7xl,
-        #about {
-            width: min(100%, 88rem);
-            padding-inline: var(--content-gutter);
-        }
-
-        #about {
-            min-height: min(48rem, calc(100svh - 4.75rem));
-            padding-block: clamp(4rem, 8vw, 7.5rem);
-            gap: clamp(2.75rem, 7vw, 7rem);
-        }
-
-        #about>div:first-child {
-            max-width: 51rem;
-        }
-
-        #about h1 {
-            max-width: 13ch;
-            color: var(--ink);
-            font-size: clamp(2.85rem, 6.3vw, 5.7rem);
-            line-height: .99;
-            letter-spacing: -.075em;
-            text-wrap: balance;
-        }
-
-        #about h1 br {
-            display: none;
-        }
-
-        #about h1 span {
-            text-decoration-thickness: .075em;
-            text-underline-offset: .12em;
-            text-decoration-color: #65b99d;
-        }
-
-        #about>div:first-child>p {
-            max-width: 42rem;
-            color: #5a6961;
-            font-size: clamp(1rem, 1.35vw, 1.16rem);
-            line-height: 1.85;
-        }
-
-        #about>div:first-child>div:first-child {
-            padding: .65rem .95rem;
-            border-color: #c7e4d7;
-            background: rgba(231, 243, 237, .82);
-            color: #17624c;
-            font-size: .66rem;
-            letter-spacing: .095em;
-        }
-
-        #about>div:first-child>div:nth-of-type(2) span {
-            padding: .55rem .78rem;
-            border-color: var(--line);
-            border-radius: 999px;
-            color: #46564e;
-            font-size: .69rem;
-            background: rgba(255, 255, 255, .82);
-        }
-
-        #about a[href="#contact"],
-        #about a[href="#experience"],
-        #contact button[type="submit"],
-        #main-header .header-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 3.25rem;
-            padding: .9rem 1.25rem;
-            border: 1px solid transparent;
-            border-radius: 999px;
-            font-size: .71rem;
-            letter-spacing: .065em;
-            transition: transform .25s var(--ease-out), background-color .2s ease, color .2s ease, box-shadow .2s ease;
-        }
-
-        #about a[href="#contact"],
-        #main-header .header-cta,
-        #contact button[type="submit"] {
-            background: var(--accent) !important;
-            box-shadow: 0 10px 22px rgba(8, 120, 94, .2) !important;
-        }
-
-        #about a[href="#contact"]:hover,
-        #main-header .header-cta:hover,
-        #contact button[type="submit"]:hover {
-            background: var(--accent-dark) !important;
-            transform: translateY(-2px);
-        }
-
-        #about a[href="#experience"] {
-            border-color: #cad5ce;
-            background: rgba(255, 255, 255, .65);
-        }
-
-        #about a[href="#experience"]:hover {
-            background: var(--ink);
-            color: white;
-        }
-
-        .portrait-frame {
-            width: min(100%, 27rem);
-            padding: .7rem !important;
-            border: 1px solid rgba(213, 224, 216, .95) !important;
-            border-radius: 1.65rem !important;
-            background: rgba(255, 255, 255, .9) !important;
-            box-shadow: 0 28px 70px rgba(23, 35, 31, .14) !important;
-            transform: rotate(1.2deg);
-        }
-
-        .portrait-frame:hover {
-            transform: translateY(-5px) rotate(0deg);
-            box-shadow: 0 34px 76px rgba(23, 35, 31, .18) !important;
-        }
-
-        .portrait-frame>div:first-child {
-            border-radius: 1.15rem;
-            background: linear-gradient(145deg, #dce9e1, #edf1ec);
-        }
-
-        .portrait-frame img {
-            object-position: center 22%;
-        }
-
-        .portrait-frame>div:last-child {
-            padding: .85rem .55rem .4rem;
-            border: 0;
-        }
-
-        #academics {
-            border-color: var(--line) !important;
-            background: rgba(255, 255, 255, .76) !important;
-        }
-
-        #academics .grid>div,
-        #experience .neo-card,
-        #projects .neo-card,
-        #testimonials .neo-card,
-        #skills .neo-card,
-        #contact .neo-card {
-            border: 1px solid var(--line) !important;
-            border-radius: 1.25rem !important;
-            background: rgba(255, 255, 255, .94) !important;
-        }
-
-        #academics .grid>div {
-            padding: clamp(1.5rem, 3vw, 2.25rem);
-        }
-
-        #academics .counter {
-            color: var(--ink);
-            font-variant-numeric: tabular-nums;
-        }
-
-        #academics h2,
-        #experience h2,
-        #projects h2,
-        #testimonials h2,
-        #skills h2,
-        #contact h2 {
-            color: var(--ink);
-            letter-spacing: -.055em;
-            line-height: 1.1;
-            text-wrap: balance;
-        }
-
-        #experience .neo-card {
-            padding: clamp(1.5rem, 4vw, 3rem);
-        }
-
-        #experience .neo-card>div:first-child {
-            border-color: var(--line);
-        }
-
-        #experience .neo-card>div:nth-of-type(2)>div,
-        #contact a,
-        #contact .space-y-4>div {
-            border-color: var(--line) !important;
-            border-radius: 1rem !important;
-            background: #f8faf8 !important;
-        }
-
-        #projects,
-        #contact {
-            border-color: var(--line) !important;
-        }
-
-        #projects .grid,
-        #testimonials .grid {
-            align-items: stretch;
-        }
-
-        #projects .neo-card {
-            padding: clamp(1.35rem, 3vw, 2rem);
-        }
-
-        #projects .neo-card>div:last-child span {
-            border: 1px solid #e1e9e3;
-            border-radius: 999px;
-            background: #f4f7f4;
-            color: #526159;
-            padding: .35rem .65rem;
-        }
-
-        #testimonials {
-            border-color: var(--line) !important;
-            background: linear-gradient(135deg, #eaf4ee, #f5f8f4 54%, #e7f1eb) !important;
-        }
-
-        #testimonials .neo-card {
-            padding: clamp(1.35rem, 2.4vw, 2rem);
-        }
-
-        #testimonials .neo-card p {
-            color: #43534a;
-            font-size: clamp(.95rem, 1.25vw, 1.08rem);
-        }
-
-        #skills .skill-btn {
-            min-height: 2.8rem;
-            padding: .7rem 1.15rem;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: #415148;
-            font-size: .73rem;
-            transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
-        }
-
-        #skills .skill-btn:hover {
-            transform: translateY(-1px);
-            border-color: #a8c8b8;
-        }
-
-        #skills .skill-btn.active,
-        #skills .skill-btn[aria-pressed="true"] {
-            border-color: var(--ink);
-            background: var(--ink) !important;
-            color: #fff !important;
-        }
-
-        #skills .skill-card {
-            min-width: 0;
-        }
-
-        #skills .skill-card h3 {
-            font-size: clamp(1rem, 1.45vw, 1.14rem);
-            line-height: 1.3;
-        }
-
-        #contact {
-            background: rgba(255, 255, 255, .72) !important;
-        }
-
-        #contact .neo-card {
-            padding: clamp(1.25rem, 3.5vw, 2.5rem);
-        }
-
-        #contact input,
-        #contact textarea {
-            min-height: 3rem;
-            border-width: 1px;
-            border-color: #dce5de;
-            border-radius: .8rem;
-            background: #fbfcfb;
-            color: var(--ink);
-            font-size: .9rem;
-            transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
-        }
-
-        #contact textarea {
-            min-height: 8rem;
-        }
-
-        #contact input:focus,
-        #contact textarea:focus {
-            border-color: var(--accent);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(8, 120, 94, .1);
-        }
-
-        #contact label {
-            color: #43534a;
-            font-size: .67rem;
-        }
-
-        #contact .contact-note {
-            color: var(--muted);
-            font-size: .76rem;
-            line-height: 1.6;
-        }
-
-        footer {
-            background: #17231f !important;
-        }
-
-        footer a:hover {
-            color: #94d2b6 !important;
-        }
-
-        #scroll-progress {
-            height: 3px;
-            background: linear-gradient(90deg, #08785e, #54b68e);
-        }
-
-        @media (max-width: 1023px) {
-            #about {
-                min-height: 0;
-            }
-
-            #main-header nav {
-                gap: .8rem;
-            }
-
-            #main-header nav a {
-                font-size: .7rem;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1100px) {
-
-            #main-header nav,
-            #main-header>div:first-child>div:last-child {
-                display: none !important;
-            }
-
-            #mobile-menu-btn {
-                display: grid !important;
-                place-items: center;
-            }
-
-            #mobile-menu.flex {
-                display: flex !important;
-            }
-
-            #mobile-menu {
-                padding: .75rem var(--content-gutter) 1.25rem;
-                gap: .25rem;
-                background: rgba(250, 252, 250, .98) !important;
-            }
-
-            #mobile-menu a {
-                padding: .7rem .25rem;
-                border-bottom: 1px solid #e9eeea;
-                color: #34463c;
-                font-size: .9rem;
-            }
-
-            #mobile-menu a:last-child {
-                margin-top: .6rem;
-                padding: .9rem;
-                border: 0;
-                border-radius: 999px;
-                background: var(--accent);
-                color: #fff;
-            }
-        }
-
-        @media (max-width: 767px) {
-            #main-header>div:first-child {
-                min-height: 4.25rem;
-            }
-
-            #main-header>div:first-child>a {
-                font-size: 1rem;
-            }
-
-            #mobile-menu-btn {
-                width: 2.8rem;
-                height: 2.8rem;
-                border-radius: 50%;
-                background: #edf4ef;
-            }
-
-            #mobile-menu {
-                padding: .75rem var(--content-gutter) 1.25rem;
-                gap: .25rem;
-                background: rgba(250, 252, 250, .98) !important;
-            }
-
-            #mobile-menu a {
-                padding: .7rem .25rem;
-                border-bottom: 1px solid #e9eeea;
-                color: #34463c;
-                font-size: .9rem;
-            }
-
-            #mobile-menu a:last-child {
-                margin-top: .6rem;
-                padding: .9rem;
-                border: 0;
-                border-radius: 999px;
-                background: var(--accent);
-                color: #fff;
-            }
-
-            main section:not(#about) {
-                padding-block: 4.25rem;
-            }
-
-            #about {
-                padding-top: 3.5rem;
-                padding-bottom: 4.5rem;
-            }
-
-            #about h1 {
-                max-width: 12ch;
-                font-size: clamp(2.65rem, 11vw, 4.5rem);
-            }
-
-            #about>div:first-child>div:first-child {
-                max-width: 100%;
-                line-height: 1.6;
-            }
-
-            #about>div:first-child>div:nth-of-type(2) {
-                gap: .5rem;
-            }
-
-            #about>div:first-child>div:last-child {
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-
-            #about>div:first-child>div:last-child a {
-                width: 100%;
-            }
-
-            .portrait-frame {
-                max-width: min(82vw, 23rem);
-            }
-
-            #academics .grid {
-                gap: .9rem;
-            }
-
-            #academics .grid>div {
-                padding: 1.4rem 1rem;
-            }
-
-            #experience .neo-card {
-                padding: 1.25rem;
-            }
-
-            #experience h3 {
-                font-size: clamp(1.45rem, 7vw, 2rem);
-                line-height: 1.15;
-            }
-
-            #projects .grid,
-            #testimonials .grid {
-                gap: 1rem;
-            }
-
-            #skills .flex.justify-center {
-                flex-wrap: wrap;
-            }
-
-            #contact .grid {
-                gap: 2.5rem;
-            }
-
-            footer .max-w-7xl>div:first-child {
-                gap: 1.5rem;
-            }
-
-            footer .max-w-7xl>div:first-child>div:nth-child(2) {
-                gap: .8rem 1rem;
-            }
-        }
-
-        @media (max-width: 420px) {
-            :root {
-                --content-gutter: 1rem;
-            }
-
-            #about h1 {
-                font-size: clamp(2.45rem, 12vw, 3.35rem);
-            }
-
-            #about>div:first-child>p {
-                font-size: .98rem;
-            }
-
-            #academics .text-5xl {
-                font-size: 2.55rem;
-            }
-
-            #academics .text-3xl {
-                font-size: 1.5rem;
-            }
-
-            #contact .flex.items-center.justify-between {
-                align-items: flex-start;
-                gap: .65rem;
-                flex-direction: column;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-        }
-    </style>
 </head>
 
-<body class="selection:bg-emerald-600 selection:text-white">
+<body class="site-body">
 
     <!-- Scroll Progress Line -->
-    <div id="scroll-progress"></div>
+    <div id="scroll-progress-bar"></div>
 
     <!-- MAIN STICKY NAVIGATION -->
-    <header id="main-header"
-        class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header id="page-header" class="site-header">
+        <div class="site-header__inner">
 
             <!-- Brand Logo -->
-            <a href="#" class="text-2xl font-black tracking-tighter group flex items-center gap-1 text-slate-900">
-                Nikunjkumar<span class="text-emerald-600 group-hover:text-slate-900 transition-colors">.Savaliya</span>
+            <a href="#" class="site-header__link">
+                Nikunjkumar<span class="site-header__text">.Savaliya</span>
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-tight text-slate-700">
-                <a href="#about" class="hover:text-emerald-600 transition-colors">About</a>
-                <a href="#academics" class="hover:text-emerald-600 transition-colors">Academics</a>
-                <a href="#experience" class="hover:text-emerald-600 transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-emerald-600 transition-colors">Projects</a>
-                <a href="#testimonials" class="hover:text-emerald-600 transition-colors">Testimonials</a>
-                <a href="#skills" class="hover:text-emerald-600 transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-emerald-600 transition-colors">Contact</a>
+            <nav class="site-nav">
+                <a href="#about" class="site-header__nav-link">About</a>
+                <a href="#personal-info" class="site-header__nav-link">Personal Info</a>
+                <a href="#academics" class="site-header__nav-link">Academics</a>
+                <a href="#experience" class="site-header__nav-link">Experience</a>
+                <a href="#projects" class="site-header__nav-link">Projects</a>
+                <a href="#testimonials" class="site-header__nav-link">Testimonials</a>
+                <a href="#skills" class="site-header__nav-link">Skills</a>
+                <a href="#contact" class="site-header__nav-link">Contact</a>
             </nav>
 
             <!-- Action Button -->
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="#contact"
-                    class="header-cta bg-emerald-600 text-white text-xs uppercase font-extrabold px-5 py-3 rounded-lg hover:bg-emerald-700 transition-all neo-card">
-                    Get In Touch <i class="fa-solid fa-arrow-right-long ml-2"></i>
+            <div class="site-header__actions">
+                <a href="#contact" class="site-header__cta neo-card site-header__cta-button">
+                    Get In Touch <i class="fa-solid fa-arrow-right-long site-header__icon"></i>
                 </a>
             </div>
 
             <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-900 focus:outline-none p-2"
-                aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
-                <i id="menu-icon" class="fa-solid fa-bars-staggered text-xl"></i>
+            <button id="mobile-menu-button" class="site-header__menu-toggle" aria-label="Toggle navigation menu"
+                aria-controls="mobile-menu" aria-expanded="false">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars-staggered site-header__menu-icon"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Drawer -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 flex-col space-y-4 text-base font-bold shadow-xl">
-            <a href="#about" class="mobile-link hover:text-emerald-600">About</a>
-            <a href="#academics" class="mobile-link hover:text-emerald-600">Academics</a>
-            <a href="#experience" class="mobile-link hover:text-emerald-600">Experience</a>
-            <a href="#projects" class="mobile-link hover:text-emerald-600">Projects</a>
-            <a href="#testimonials" class="mobile-link hover:text-emerald-600">Testimonials</a>
-            <a href="#skills" class="mobile-link hover:text-emerald-600">Skills</a>
-            <a href="#contact" class="mobile-link hover:text-emerald-600">Contact</a>
-            <a href="#contact" class="mobile-link text-center bg-emerald-600 text-white py-3 rounded-lg mt-2">Connect
+        <div id="mobile-menu" class="site-header__mobile-menu">
+            <a href="#about" class="js-mobile-link site-header__mobile-link">About</a>
+            <a href="#academics" class="js-mobile-link site-header__mobile-link">Academics</a>
+            <a href="#experience" class="js-mobile-link site-header__mobile-link">Experience</a>
+            <a href="#projects" class="js-mobile-link site-header__mobile-link">Projects</a>
+            <a href="#testimonials" class="js-mobile-link site-header__mobile-link">Testimonials</a>
+            <a href="#skills" class="js-mobile-link site-header__mobile-link">Skills</a>
+            <a href="#personal-info" class="js-mobile-link site-header__mobile-link">Personal Info</a>
+            <a href="#contact" class="js-mobile-link site-header__mobile-link">Contact</a>
+            <a href="#contact" class="js-mobile-link site-header__mobile-cta">Connect
                 Now</a>
         </div>
     </header>
 
-    <main class="relative bg-grid-pattern">
+    <main class="page-background-grid site-main">
 
         <!-- HERO SECTION -->
-        <section id="about"
-            class="max-w-7xl mx-auto px-6 py-16 sm:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section id="about" class="hero__section">
 
             <!-- Left Copy Column (7 Cols) -->
-            <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+            <div class="hero__copy" data-aos="fade-right">
 
                 <!-- Status Badge -->
-                <div
-                    class="inline-flex items-center gap-2.5 px-4 py-2 border border-emerald-200 rounded-full bg-emerald-50 text-xs font-bold uppercase tracking-widest text-emerald-800 shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <div class="hero__status">
+                    <span class="hero__status-dot"></span>
                     Available for Technology & Sales Opportunities
                 </div>
 
                 <!-- Main Heading -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]">
-                    Connecting Technology with <span
-                        class="underline decoration-emerald-500 underline-offset-8">Customer Insight.</span>
+                <h1 class="hero__title">
+                    Connecting Technology with <span class="hero__title-accent">Customer Insight.</span>
                 </h1>
 
                 <!-- Bio Paragraph -->
-                <p class="text-slate-600 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
-                    I'm <strong class="text-slate-900 font-semibold">Nikunjkumar Savaliya</strong>, a 3rd-year <span
-                        class="text-slate-900 font-semibold">Bachelor of Computer Applications (BCA)</span> student at
+                <p class="hero__bio">
+                    I'm <strong class="hero__name">Nikunjkumar Savaliya</strong>, a 3rd-year <span
+                        class="hero__highlight">Bachelor of Computer Applications (BCA)</span> student at
                     Naranlala College, Navsari. I bridge technical problem solving with direct customer communication
                     and retail growth strategy.
                 </p>
 
                 <!-- Quick Attributes Badges -->
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span
-                        class="bg-white border border-slate-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-md"><i
-                            class="fa-solid fa-graduation-cap mr-1.5 text-emerald-600"></i> BCA Student</span>
-                    <span
-                        class="bg-white border border-slate-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-md"><i
-                            class="fa-solid fa-chart-line mr-1.5 text-emerald-600"></i> Ex-PepsiCo Sales Promoter</span>
-                    <span
-                        class="bg-white border border-slate-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-md"><i
-                            class="fa-solid fa-location-dot mr-1.5 text-emerald-600"></i> Navsari, Gujarat</span>
+                <div class="hero__badges">
+                    <span class="hero__badge"><i class="fa-solid fa-graduation-cap hero__badge-icon"></i> BCA
+                        Student</span>
+                    <span class="hero__badge"><i class="fa-solid fa-chart-line hero__badge-icon"></i> Ex-PepsiCo Sales
+                        Promoter</span>
+                    <span class="hero__badge"><i class="fa-solid fa-location-dot hero__badge-icon"></i> Navsari,
+                        Gujarat</span>
                 </div>
 
                 <!-- Call To Actions -->
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#contact"
-                        class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-emerald-700 transition-all neo-card">
-                        Get In Touch <i class="fa-solid fa-paper-plane ml-2"></i>
+                <div class="hero__actions">
+                    <a href="#contact" class="neo-card hero__button-primary">
+                        Get In Touch <i class="fa-solid fa-paper-plane hero__button-icon"></i>
                     </a>
-                    <a href="#experience"
-                        class="border-2 border-slate-900 text-slate-900 px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-slate-900 hover:text-white transition-all">
+                    <a href="#experience" class="hero__button-secondary">
                         Explore Work History
                     </a>
                 </div>
             </div>
 
             <!-- Right Portrait Column (5 Cols) -->
-            <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-delay="150">
-                <div class="portrait-frame w-full max-w-sm rounded-2xl bg-white border-2 border-slate-900 p-3 relative">
-                    <div class="overflow-hidden rounded-xl aspect-[3/4] bg-slate-100 relative">
-                        <img src="nikunjkumar-portrait.jpg" alt="Nikunjkumar Savaliya"
-                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            <div class="hero__visual" data-aos="fade-left" data-aos-delay="150">
+                <div class="hero__portrait hero__portrait-frame">
+                    <div class="hero__image-wrap">
+                        <img src="nikunjkumar-portrait.jpg" alt="Nikunjkumar Savaliya" class="hero__image"
                             loading="eager" fetchpriority="high">
                     </div>
 
                     <!-- Floating overlay card -->
-                    <div
-                        class="mt-3 p-3 bg-white border border-slate-200 rounded-lg flex items-center justify-between text-xs">
+                    <div class="hero__floating-card">
                         <div>
-                            <p class="font-extrabold text-slate-900">Nikunjkumar Savaliya</p>
-                            <p class="text-slate-500 font-medium text-[11px]">BCA Candidate & Retail Strategist</p>
+                            <p class="hero__card-name">Nikunjkumar Savaliya</p>
+                            <p class="hero__card-role">BCA Candidate & Retail Strategist</p>
                         </div>
-                        <span
-                            class="bg-emerald-600 text-white px-2 py-1 rounded text-[10px] font-black uppercase">VERIFIED</span>
+                        <span class="hero__verified-badge">VERIFIED</span>
                     </div>
                 </div>
             </div>
 
         </section>
-
-        <!-- ACADEMIC METRICS SECTION (WITH ANIMATED COUNTERS) -->
-        <section id="academics" class="py-16 border-y border-slate-200 bg-white/70">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-10">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600">Academic
-                        Background</span>
-                    <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1">Education & Consistency</h2>
+        <!-- PERSONAL INFORMATION -->
+        <section id="personal-info" class="personal__section">
+            <div class="personal__container">
+                <div class="personal__header" data-aos="fade-up">
+                    <span class="personal__text">Personal
+                        Profile</span>
+                    <h2 class="personal__section-title">Personal Information
+                    </h2>
+                    <p class="personal__paragraph">A little more about my background, languages, and social
+                        profiles.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <dl class="personal__grid personal__details">
+                    <div class="personal__card" data-aos="fade-up">
+                        <dt><i class="fa-solid fa-user personal__icon" aria-hidden="true"></i>Full Name</dt>
+                        <dd>Nikunjkumar Savaliya</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="50">
+                        <dt><i class="fa-solid fa-calendar-days personal__icon" aria-hidden="true"></i>Date of
+                            Birth</dt>
+                        <dd>1 June 2007</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="100">
+                        <dt><i class="fa-solid fa-venus-mars personal__icon" aria-hidden="true"></i>Gender</dt>
+                        <dd>Male</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="150">
+                        <dt><i class="fa-solid fa-location-dot personal__icon" aria-hidden="true"></i>Address
+                        </dt>
+                        <dd>Navsari, Gujarat, India</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="50">
+                        <dt><i class="fa-solid fa-city personal__icon" aria-hidden="true"></i>City</dt>
+                        <dd>Navsari</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="100">
+                        <dt><i class="fa-solid fa-flag personal__icon" aria-hidden="true"></i>Nationality</dt>
+                        <dd>Indian</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="150">
+                        <dt><i class="fa-solid fa-hands-praying personal__icon" aria-hidden="true"></i>Religion
+                        </dt>
+                        <dd>Hindu</dd>
+                    </div>
+                    <div class="personal__card" data-aos="fade-up" data-aos-delay="200">
+                        <dt><i class="fa-solid fa-language personal__icon" aria-hidden="true"></i>Languages Known
+                        </dt>
+                        <dd>Gujarati (Native)<br> Hindi (Fluent)<br> English (Good)</dd>
+                    </div>
+                </dl>
+
+                <div class="personal__socials personal__social-links" data-aos="fade-up" data-aos-delay="100">
+                    <span><i class="fa-brands fa-instagram personal__icon" aria-hidden="true"></i>Social
+                        Media</span>
+                    <a href="https://www.instagram.com/niickunjs/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open Instagram profile niickunjs">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i> @niickunjs
+                        <i class="fa-solid fa-arrow-up-right-from-square personal__link-icon" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/niikkunjs/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open Instagram profile niikkunjs">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i> @niikkunjs
+                        <i class="fa-solid fa-arrow-up-right-from-square personal__link-icon" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nikunjkumarsavaliya/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open LinkedIn profile nikunjkumarsavaliya">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i> @nikunjkumarsavaliya
+                        <i class="fa-solid fa-arrow-up-right-from-square personal__link-icon" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACADEMIC METRICS SECTION (WITH ANIMATED COUNTERS) -->
+        <section id="academics" class="academics__section">
+            <div class="academics__container">
+                <div class="academics__header">
+                    <span class="academics__text">Academic
+                        Background</span>
+                    <h2 class="academics__section-title">Education & Consistency</h2>
+                </div>
+
+                <div class="academics__grid">
                     <!-- Metric 1 -->
-                    <div class="p-8 border-2 border-slate-900 bg-white rounded-xl text-center neo-card"
-                        data-aos="zoom-in">
-                        <div
-                            class="text-5xl font-black tracking-tight mb-2 text-slate-900 flex items-center justify-center">
-                            <span class="counter" data-target="7.3">0</span><span
-                                class="text-2xl text-emerald-600 ml-1">CGPA</span>
+                    <div class="neo-card academics__card" data-aos="zoom-in">
+                        <div class="academics__metric">
+                            <span class="academics__counter" data-target="7.3">0</span><span
+                                class="academics__metric-label">CGPA</span>
                         </div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">BCA (3rd Year)</h3>
-                        <p class="text-xs text-slate-500 mt-2">Naranlala College of Professional & Applied Sciences,
+                        <h3 class="academics__card-title">BCA (3rd Year)</h3>
+                        <p class="academics__paragraph">Naranlala College of Professional & Applied Sciences,
                             Navsari</p>
                     </div>
 
                     <!-- Metric 2 -->
-                    <div class="p-8 border-2 border-slate-900 bg-white rounded-xl text-center neo-card"
-                        data-aos="zoom-in" data-aos-delay="100">
-                        <div
-                            class="text-5xl font-black tracking-tight mb-2 text-slate-900 flex items-center justify-center">
-                            <span class="counter" data-target="85">0</span><span
-                                class="text-3xl text-emerald-600">%</span>
+                    <div class="neo-card academics__card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="academics__metric">
+                            <span class="academics__counter" data-target="85">0</span><span
+                                class="academics__metric-unit">%</span>
                         </div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">12th Standard (Commerce)
+                        <h3 class="academics__card-title">12th Standard (Commerce)
                         </h3>
-                        <p class="text-xs text-slate-500 mt-2">Sheth P.H. Vidhyalaya (Sanskar Bharti), Navsari</p>
+                        <p class="academics__paragraph">Sheth P.H. Vidhyalaya (Sanskar Bharti), Navsari</p>
                     </div>
 
                     <!-- Metric 3 -->
-                    <div class="p-8 border-2 border-slate-900 bg-white rounded-xl text-center neo-card"
-                        data-aos="zoom-in" data-aos-delay="200">
-                        <div
-                            class="text-5xl font-black tracking-tight mb-2 text-slate-900 flex items-center justify-center">
-                            <span class="counter" data-target="86">0</span><span
-                                class="text-3xl text-emerald-600">%</span>
+                    <div class="neo-card academics__card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="academics__metric">
+                            <span class="academics__counter" data-target="86">0</span><span
+                                class="academics__metric-unit">%</span>
                         </div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">10th Standard</h3>
-                        <p class="text-xs text-slate-500 mt-2">Sheth P.H. Vidhyalaya (Sanskar Bharti), Navsari</p>
+                        <h3 class="academics__card-title">10th Standard</h3>
+                        <p class="academics__paragraph">Sheth P.H. Vidhyalaya (Sanskar Bharti), Navsari</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- WORK EXPERIENCE SECTION -->
-        <section id="experience" class="max-w-7xl mx-auto px-6 py-20">
-            <div class="text-center max-w-xl mx-auto mb-14" data-aos="fade-up">
-                <span
-                    class="text-xs font-extrabold uppercase tracking-widest bg-emerald-600 text-white px-3 py-1 rounded-full">Track
+        <section id="experience" class="experience__section">
+            <div class="experience__header" data-aos="fade-up">
+                <span class="experience__text">Track
                     Record</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">Professional Experience
+                <h2 class="experience__section-title">Professional Experience
                 </h2>
-                <p class="text-slate-600 text-sm mt-2">Hands-on corporate exposure in high-footfall retail operations.
+                <p class="experience__paragraph">Hands-on corporate exposure in high-footfall retail operations.
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                <div
-                    class="border-2 border-slate-900 rounded-2xl p-8 sm:p-10 bg-white neo-card relative overflow-hidden">
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-6 border-b border-slate-200 gap-4">
+            <div class="experience__timeline" data-aos="fade-up" data-aos-delay="100">
+                <div class="neo-card experience__card">
+                    <div class="experience__card-header">
                         <div>
-                            <span
-                                class="bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                            <span class="experience__role">
                                 Sales Executive / Promoter
                             </span>
-                            <h3 class="text-3xl font-black text-slate-900 tracking-tight mt-3">PepsiCo India Pvt. Ltd.
+                            <h3 class="experience__card-title">PepsiCo India Pvt. Ltd.
                             </h3>
-                            <p class="text-sm font-semibold text-slate-600 mt-1">
-                                <i class="fa-solid fa-location-dot text-emerald-600 mr-1"></i> Navsari D-Mart, Gujarat
+                            <p class="experience__location">
+                                <i class="fa-solid fa-location-dot experience__icon"></i> Navsari D-Mart, Gujarat
                             </p>
                         </div>
-                        <span
-                            class="bg-slate-100 text-slate-800 text-xs font-bold px-4 py-2 rounded-lg border border-slate-200">
+                        <span class="experience__dates">
                             July 10, 2025 – Dec 8, 2025
                         </span>
                     </div>
 
-                    <p class="text-slate-700 text-base leading-relaxed my-6">
+                    <p class="experience__summary">
                         Managed direct customer outreach and product positioning for PepsiCo's primary Food & Beverage
-                        portfolio at one of Navsari's highest-volume retail hubs (D-Mart).
+                        portfolio at one of Navsari's highest-volume retail hubs <b>D-Mart</b>.
                     </p>
 
                     <!-- Key Takeaways Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg">
-                            <h4
-                                class="font-extrabold text-xs uppercase tracking-wider text-slate-900 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-users text-emerald-600"></i> Customer Engagement
+                    <div class="experience__highlights">
+                        <div class="experience__highlight">
+                            <h4 class="experience__subheading">
+                                <i class="fa-solid fa-users experience__highlight-icon"></i> Customer Engagement
                             </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Engaged hundreds of daily consumers,
+                            <p class="experience__highlight-text">Engaged hundreds of daily consumers,
                                 applying persuasive product pitches and active listening.</p>
                         </div>
-                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-lg">
-                            <h4
-                                class="font-extrabold text-xs uppercase tracking-wider text-slate-900 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-chart-pie text-emerald-600"></i> Consumer Psychology
+                        <div class="experience__highlight">
+                            <h4 class="experience__subheading">
+                                <i class="fa-solid fa-chart-pie experience__highlight-icon"></i> Consumer Psychology
                             </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Analyzed buyer behavior patterns to
+                            <p class="experience__highlight-text">Analyzed buyer behavior patterns to
                                 optimize instant point-of-sale customer conversions.</p>
                         </div>
                     </div>
@@ -993,69 +318,67 @@
         </section>
 
         <!-- PROJECTS & HIGHLIGHTS SECTION -->
-        <section id="projects" class="py-20 border-t border-slate-200 bg-white/50">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-xl mx-auto mb-14" data-aos="fade-up">
-                    <span
-                        class="text-xs font-extrabold uppercase tracking-widest bg-emerald-600 text-white px-3 py-1 rounded-full">Portfolio
+        <section id="projects" class="projects__section">
+            <div class="projects__container">
+                <div class="projects__header" data-aos="fade-up">
+                    <span class="projects__text">Portfolio
                         Showcase</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">Projects & Applied
+                    <h2 class="projects__section-title">Projects & Applied
                         Learning</h2>
-                    <p class="text-slate-600 text-sm mt-2">Combining BCA computer concepts with business domain
+                    <p class="projects__paragraph">Combining BCA computer concepts with business domain
                         knowledge.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="projects__grid">
                     <!-- Project Card 1 -->
-                    <div class="border-2 border-slate-900 rounded-xl p-6 bg-white neo-card flex flex-col justify-between"
-                        data-aos="fade-up">
+                    <div class="neo-card projects__card" data-aos="fade-up">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span
-                                    class="text-xs font-black bg-slate-900 text-white px-2.5 py-1 rounded uppercase">Tech
+                            <div class="projects__card-top">
+                                <span class="projects__category">Tech
                                     & Data</span>
-                                <i class="fa-solid fa-laptop-code text-xl text-emerald-600"></i>
+                                <i class="fa-solid fa-laptop-code projects__icon"></i>
                             </div>
-                            <h3 class="text-xl font-black text-slate-900 mb-2">Student & Academic Management System</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                                Built database-backed web module interfaces tailored for managing course schedules,
-                                grades, and student bio-data records efficiently during BCA coursework.
+                            <h3 class="projects__card-title">Money Management System</h3>
+                            <p class="projects__description">
+                                Built database-backed web module interfaces tailored for managing financial records,
+                                transactions, and budgeting information efficiently during BCA coursework in React JS
+                                and PHP.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
-                            <span
-                                class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">HTML/CSS</span>
-                            <span
-                                class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">JavaScript</span>
-                            <span class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">SQL
+                        <div class="projects__tags">
+                            <span class="projects__tag">HTML/CSS</span>
+                            <span class="projects__tag">JavaScript</span>
+                            <span class="projects__tag">React
+                                JS</span>
+                            <span class="projects__tag">PHP</span>
+                            <span class="projects__tag">Jquery</span>
+                            <span class="projects__tag">SQL
                                 Database</span>
                         </div>
                     </div>
 
                     <!-- Project Card 2 -->
-                    <div class="border-2 border-slate-900 rounded-xl p-6 bg-white neo-card flex flex-col justify-between"
-                        data-aos="fade-up" data-aos-delay="100">
+                    <div class="neo-card projects__card" data-aos="fade-up" data-aos-delay="100">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span
-                                    class="text-xs font-black bg-slate-900 text-white px-2.5 py-1 rounded uppercase">Business
+                            <div class="projects__card-top">
+                                <span class="projects__category">Business
                                     Analytics</span>
-                                <i class="fa-solid fa-shop text-xl text-emerald-600"></i>
+                                <i class="fa-solid fa-shop projects__icon"></i>
                             </div>
-                            <h3 class="text-xl font-black text-slate-900 mb-2">Retail Customer Insights & Promoter Model
+                            <h3 class="projects__card-title">Retail Customer Undersanding
                             </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                                Synthesized real-world sales learnings from PepsiCo D-Mart activation to design a
-                                conceptual CRM framework focused on repeat brand retention.
+                            <p class="projects__description">
+                                Synthesized real-world Retail learnings from PepsiCo under Navsari D-mart.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
-                            <span class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">Sales
-                                Analytics</span>
-                            <span class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">Customer
-                                Profiling</span>
-                            <span class="text-[11px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded">Retail
-                                Strategy</span>
+                        <div class="projects__tags">
+                            <span class="projects__tag">Product
+                                Placement and Visibility</span>
+                            <span class="projects__tag">Customer's Choices</span>
+                            <span class="projects__tag">Repeat Customer's Psychology</span>
+                            <span class="projects__tag">Behaviour
+                                Understanding</span>
+
                         </div>
                     </div>
                 </div>
@@ -1063,121 +386,108 @@
         </section>
 
         <!-- WHAT PEOPLE SAY TO ME SECTION (HIGHLIGHTED TESTIMONIALS) -->
-        <section id="testimonials" class="py-20 border-t border-slate-200 bg-emerald-50/50 relative overflow-hidden">
+        <section id="testimonials" class="testimonials__section">
             <!-- Decorative Background Accent Elements -->
-            <div class="absolute -right-16 -top-16 w-64 h-64 bg-emerald-100 rounded-full blur-2xl pointer-events-none">
+            <div class="testimonials__glow">
             </div>
-            <div
-                class="absolute -left-16 -bottom-16 w-64 h-64 bg-emerald-100 rounded-full blur-2xl pointer-events-none">
+            <div class="testimonials__glow">
             </div>
 
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="text-center max-w-xl mx-auto mb-16" data-aos="fade-up">
-                    <span
-                        class="text-xs font-extrabold uppercase tracking-widest bg-emerald-600 text-white px-4 py-1.5 rounded-full shadow-md">
-                        <i class="fa-solid fa-quote-left mr-1 text-emerald-200"></i> Peer Perspectives
+            <div class="testimonials__content">
+                <div class="testimonials__header" data-aos="fade-up">
+                    <span class="testimonials__text">
+                        <i class="fa-solid fa-quote-left testimonials__icon"></i> Peer Perspectives
                     </span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mt-3">What People Say To Me
+                    <h2 class="testimonials__section-title">What People Say To Me
                     </h2>
-                    <p class="text-slate-600 text-sm sm:text-base mt-3">Authentic feedback and personal reflections from
+                    <p class="testimonials__paragraph">Authentic feedback and personal reflections from
                         colleagues, peers, and collaborators.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="testimonials__grid">
 
                     <!-- Testimonial 1: Yash Vasoya -->
-                    <div class="border-2 border-slate-900 rounded-2xl p-8 bg-white neo-card flex flex-col justify-between relative group"
-                        data-aos="fade-up">
-                        <div
-                            class="absolute -top-4 right-8 bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-xs shadow-md group-hover:scale-110 transition-transform">
+                    <div class="neo-card testimonials__card" data-aos="fade-up">
+                        <div class="testimonials__quote-mark">
                             <i class="fa-solid fa-quote-right"></i>
                         </div>
                         <div>
-                            <div class="flex items-center gap-1 text-amber-500 mb-4 text-xs">
+                            <div class="testimonials__stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="text-slate-800 font-medium text-base sm:text-lg leading-relaxed italic mb-6">
-                                &ldquo;I am very <strong
-                                    class="text-slate-900 font-extrabold underline decoration-emerald-500 decoration-2">Disciplined</strong>
+                            <p class="testimonials__quote">
+                                &ldquo;Nikunj is a very <strong class="testimonials__emphasis">disciplined</strong>
                                 person.&rdquo;
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div class="testimonials__author">
                             <div>
-                                <h3 class="font-black text-slate-900 text-sm">Yash Vasoya</h3>
-                                <p class="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">Peer /
-                                    Colleague</p>
+                                <h3 class="testimonials__card-title">Yash Vasoya</h3>
+                                <p class="testimonials__author-role">Best Friend
+                                </p>
                             </div>
-                            <span
-                                class="bg-slate-900 text-white text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider">Discipline</span>
+                            <span class="testimonials__tag">Discipline</span>
                         </div>
                     </div>
 
                     <!-- Testimonial 2: Meet Sarviya -->
-                    <div class="border-2 border-slate-900 rounded-2xl p-8 bg-white neo-card flex flex-col justify-between relative group"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div
-                            class="absolute -top-4 right-8 bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-xs shadow-md group-hover:scale-110 transition-transform">
+                    <div class="neo-card testimonials__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonials__quote-mark">
                             <i class="fa-solid fa-quote-right"></i>
                         </div>
                         <div>
-                            <div class="flex items-center gap-1 text-amber-500 mb-4 text-xs">
+                            <div class="testimonials__stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="text-slate-800 font-medium text-base sm:text-lg leading-relaxed italic mb-6">
-                                &ldquo;I am very <strong
-                                    class="text-slate-900 font-extrabold underline decoration-emerald-500 decoration-2">good
-                                    person behaviourwise</strong>.&rdquo;
+                            <p class="testimonials__quote">
+                                &ldquo;Nikunj follows ethical principles <strong
+                                    class="testimonials__emphasis">consistently</strong>.&rdquo;
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div class="testimonials__author">
                             <div>
-                                <h3 class="font-black text-slate-900 text-sm">Meet Sarviya</h3>
-                                <p class="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">Peer /
+                                <h3 class="testimonials__card-title">Meet Sarviya</h3>
+                                <p class="testimonials__author-role">Peer /
                                     Friend</p>
                             </div>
-                            <span
-                                class="bg-slate-900 text-white text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider">Character</span>
+                            <span class="testimonials__tag">Character</span>
                         </div>
                     </div>
 
                     <!-- Testimonial 3: Karan Shinde -->
-                    <div class="border-2 border-slate-900 rounded-2xl p-8 bg-white neo-card flex flex-col justify-between relative group"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div
-                            class="absolute -top-4 right-8 bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-xs shadow-md group-hover:scale-110 transition-transform">
+                    <div class="neo-card testimonials__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonials__quote-mark">
                             <i class="fa-solid fa-quote-right"></i>
                         </div>
                         <div>
-                            <div class="flex items-center gap-1 text-amber-500 mb-4 text-xs">
+                            <div class="testimonials__stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="text-slate-800 font-medium text-base sm:text-lg leading-relaxed italic mb-6">
-                                &ldquo;I am very <strong
-                                    class="text-slate-900 font-extrabold underline decoration-emerald-500 decoration-2">enthusiastic
-                                    about work and stick it until it solved</strong>.&rdquo;
+                            <p class="testimonials__quote">
+                                &ldquo;Nikunj is <strong class="testimonials__emphasis">enthusiastic
+                                    about his work</strong>
+                                and sees problems through to a solution.&rdquo;
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div class="testimonials__author">
                             <div>
-                                <h3 class="font-black text-slate-900 text-sm">Karan Shinde</h3>
-                                <p class="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">
+                                <h3 class="testimonials__card-title">Karan Shinde</h3>
+                                <p class="testimonials__author-role">
                                     Collaborator</p>
                             </div>
-                            <span
-                                class="bg-slate-900 text-white text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider">Problem
+                            <span class="testimonials__tag">Problem
                                 Solver</span>
                         </div>
                     </div>
@@ -1187,223 +497,217 @@
         </section>
 
         <!-- SKILLS MATRIX WITH FILTERING -->
-        <section id="skills" class="max-w-7xl mx-auto px-6 py-20">
-            <div class="text-center max-w-xl mx-auto mb-10" data-aos="fade-up">
-                <span
-                    class="text-xs font-extrabold uppercase tracking-widest bg-emerald-600 text-white px-3 py-1 rounded-full">Core
+        <section id="skills" class="skills__section">
+            <div class="skills__header" data-aos="fade-up">
+                <span class="skills__text">Core
                     Competencies</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">Skills & Capabilities
+                <h2 class="skills__section-title">Skills & Capabilities
                 </h2>
-                <p class="text-slate-600 text-sm mt-2">Filter between soft skills, communication, and technical
+                <p class="skills__paragraph">Filter between soft skills, communication, and technical
                     foundations.</p>
             </div>
 
             <!-- Filter Buttons -->
-            <div class="flex justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="50">
-                <button onclick="filterSkills('all', this)" aria-pressed="true"
-                    class="skill-btn active border-2 border-slate-900 bg-slate-900 text-white text-xs font-extrabold uppercase px-5 py-2.5 rounded-lg transition-all">All
+            <div class="skills__filters" data-aos="fade-up" data-aos-delay="50">
+                <button onclick="filterSkills('all', this)" aria-pressed="true" class="skills__filter-btn is-active">All
                     Skills</button>
-                <button onclick="filterSkills('soft', this)" aria-pressed="false"
-                    class="skill-btn border-2 border-slate-900 bg-white text-slate-900 text-xs font-extrabold uppercase px-5 py-2.5 rounded-lg transition-all">Sales
+                <button onclick="filterSkills('skills__item--sales', this)" aria-pressed="false"
+                    class="skills__filter-btn">Sales
                     & Interpersonal</button>
-                <button onclick="filterSkills('tech', this)" aria-pressed="false"
-                    class="skill-btn border-2 border-slate-900 bg-white text-slate-900 text-xs font-extrabold uppercase px-5 py-2.5 rounded-lg transition-all">Technical
+                <button onclick="filterSkills('skills__item--technical', this)" aria-pressed="false"
+                    class="skills__filter-btn">Technical
                     & Academics</button>
             </div>
 
             <!-- Skills Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div class="skills__grid">
 
                 <!-- Skill 1 -->
-                <div class="skill-card soft border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">01</span>
-                        <i class="fa-solid fa-comments text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--sales neo-card skills__card" data-aos="fade-up">
+                    <div class="skills__card-top">
+                        <span class="skills__number">01</span>
+                        <i class="fa-solid fa-comments skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Customer Engagement</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Rapidly building trust, listening actively, and
+                    <h3 class="skills__card-title">Customer Engagement</h3>
+                    <p class="skills__card-text">Rapidly building trust, listening actively, and
                         communicating product value effectively.</p>
                 </div>
 
                 <!-- Skill 2 -->
-                <div class="skill-card soft border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up" data-aos-delay="50">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">02</span>
-                        <i class="fa-solid fa-brain text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--sales neo-card skills__card" data-aos="fade-up"
+                    data-aos-delay="50">
+                    <div class="skills__card-top">
+                        <span class="skills__number">02</span>
+                        <i class="fa-solid fa-brain skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Human Behavior Analysis</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Understanding consumer motivation, decision
+                    <h3 class="skills__card-title">Human Behavior Analysis</h3>
+                    <p class="skills__card-text">Understanding consumer motivation, decision
                         drivers, and buyer psychology.</p>
                 </div>
 
                 <!-- Skill 3 -->
-                <div class="skill-card tech border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">03</span>
-                        <i class="fa-solid fa-code text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--technical neo-card skills__card" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="skills__card-top">
+                        <span class="skills__number">03</span>
+                        <i class="fa-solid fa-code skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Computer Applications (BCA)</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Web fundamentals, DBMS concepts, programming
+                    <h3 class="skills__card-title">Computer Applications (BCA)</h3>
+                    <p class="skills__card-text">Web fundamentals, DBMS concepts, programming
                         principles, and software usage.</p>
                 </div>
 
                 <!-- Skill 4 -->
-                <div class="skill-card soft border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">04</span>
-                        <i class="fa-solid fa-network-wired text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--sales neo-card skills__card" data-aos="fade-up"
+                    data-aos-delay="150">
+                    <div class="skills__card-top">
+                        <span class="skills__number">04</span>
+                        <i class="fa-solid fa-network-wired skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Networking & Relationships</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Cultivating strong professional connections across
+                    <h3 class="skills__card-title">Networking & Relationships</h3>
+                    <p class="skills__card-text">Cultivating strong professional connections across
                         cross-functional teams.</p>
                 </div>
 
                 <!-- Skill 5 -->
-                <div class="skill-card soft border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">05</span>
-                        <i class="fa-solid fa-user-gear text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--sales neo-card skills__card" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="skills__card-top">
+                        <span class="skills__number">05</span>
+                        <i class="fa-solid fa-user-gear skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Leadership & Ownership</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Taking full initiative in group activities and
+                    <h3 class="skills__card-title">Leadership & Ownership</h3>
+                    <p class="skills__card-text">Taking full initiative in group activities and
                         executing high-responsibility targets.</p>
                 </div>
 
                 <!-- Skill 6 -->
-                <div class="skill-card tech border-2 border-slate-900 rounded-xl p-6 bg-white neo-card"
-                    data-aos="fade-up" data-aos-delay="250">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-black text-slate-400">06</span>
-                        <i class="fa-solid fa-clock text-lg text-emerald-600"></i>
+                <div class="skills__item skills__item--technical neo-card skills__card" data-aos="fade-up"
+                    data-aos-delay="250">
+                    <div class="skills__card-top">
+                        <span class="skills__number">06</span>
+                        <i class="fa-solid fa-clock skills__icon"></i>
                     </div>
-                    <h3 class="text-lg font-extrabold text-slate-900 mb-1">Time & Task Management</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Seamlessly balancing high academic marks with
+                    <h3 class="skills__card-title">Time & Task Management</h3>
+                    <p class="skills__card-text">Seamlessly balancing high academic marks with
                         intensive retail promotional shifts.</p>
                 </div>
 
             </div>
         </section>
 
+
+
         <!-- CONTACT SECTION WITH INTERACTIVE FORM -->
-        <section id="contact" class="py-20 border-t border-slate-200 bg-white/70">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <section id="contact" class="contact__section">
+            <div class="contact__container">
+                <div class="contact__grid">
 
                     <!-- Left Info Column -->
-                    <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
-                        <span
-                            class="text-xs font-extrabold uppercase tracking-widest bg-emerald-600 text-white px-3 py-1 rounded-full">Direct
+                    <div class="contact__info" data-aos="fade-right">
+                        <span class="contact__text">Direct
                             Contact</span>
-                        <h2 class="text-4xl font-black text-slate-900 tracking-tight mt-2">Let's Connect & Collaborate.
+                        <h2 class="contact__section-title">Let's Connect & Collaborate.
                         </h2>
-                        <p class="text-slate-600 text-sm leading-relaxed">
+                        <p class="contact__paragraph">
                             Whether you have an internship opportunity, sales role, technical project, or general
                             inquiry, feel free to get in touch.
                         </p>
 
                         <!-- Contact Details List -->
-                        <div class="space-y-4 pt-4">
-                            <a href="tel:+919924184068"
-                                class="flex items-center gap-4 p-4 border-2 border-slate-900 rounded-xl bg-white neo-card group">
-                                <div
-                                    class="w-10 h-10 bg-slate-900 text-white rounded-lg flex items-center justify-center font-bold">
+                        <div class="contact__info-list">
+                            <a href="tel:+919924184068" class="neo-card contact__link">
+                                <div class="contact__icon-wrap">
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-extrabold uppercase text-slate-400">Phone / WhatsApp</p>
-                                    <p class="text-base font-extrabold text-slate-900 group-hover:underline">+91
+                                    <p class="contact__label">Phone / WhatsApp</p>
+                                    <p class="contact__value-phone">+91
                                         9924184068
                                     </p>
                                 </div>
                             </a>
 
-                            <a href="mailto:savaliyanikunj93@gmail.com"
-                                class="flex items-center gap-4 p-4 border-2 border-slate-900 rounded-xl bg-white neo-card group">
-                                <div
-                                    class="w-10 h-10 bg-slate-900 text-white rounded-lg flex items-center justify-center font-bold">
+                            <a href="mailto:savaliyanikunj93@gmail.com" class="neo-card contact__link">
+                                <div class="contact__icon-wrap">
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-extrabold uppercase text-slate-400">Email Address</p>
-                                    <p class="text-base font-extrabold text-slate-900 break-all group-hover:underline">
+                                    <p class="contact__label">Email Address</p>
+                                    <p class="contact__value-email">
                                         savaliyanikunj93@gmail.com</p>
                                 </div>
                             </a>
 
-                            <div
-                                class="flex items-center gap-4 p-4 border-2 border-slate-900 rounded-xl bg-white neo-card">
-                                <div
-                                    class="w-10 h-10 bg-slate-900 text-white rounded-lg flex items-center justify-center font-bold">
+                            <div class="neo-card contact__info-item">
+                                <div class="contact__icon-wrap">
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-extrabold uppercase text-slate-400">Current Location</p>
-                                    <p class="text-base font-extrabold text-slate-900">Navsari, Gujarat, India</p>
+                                    <p class="contact__label">Current Location</p>
+                                    <p class="contact__value-location">Navsari, Gujarat, India</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Form Column -->
-                    <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
-                        <div class="border-2 border-slate-900 rounded-2xl p-8 bg-white neo-card">
-                            <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                                <h3 class="text-2xl font-black text-slate-900">Send a Direct Message</h3>
-                                <span
-                                    class="text-[10px] font-extrabold uppercase bg-slate-100 border border-slate-200 text-slate-800 px-2.5 py-1 rounded">Email
+                    <div class="contact__form-column" data-aos="fade-left" data-aos-delay="100">
+                        <div class="neo-card contact__form-card">
+                            <div class="contact__form-header">
+                                <h3 class="contact__card-title">Send a Direct Message</h3>
+                                <span class="contact__draft-tag">Email
                                     Draft</span>
                             </div>
 
-                            <form id="contact-form" onsubmit="handleForm(event)" class="space-y-4">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <form id="contact-form" onsubmit="return handleForm(event)" class="contact__form"
+                                target="contact-response-frame">
+                                <input type="hidden" id="contact-request-id" name="requestId">
+                                <div class="contact__honeypot" aria-hidden="true">
+                                    <label for="contact-website">Leave this field empty</label>
+                                    <input type="text" id="contact-website" name="website" tabindex="-1"
+                                        autocomplete="off">
+                                </div>
+                                <div class="contact__form-fields">
                                     <div>
-                                        <label for="form-name"
-                                            class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-900">Your
+                                        <label for="contact-name" class="contact__field-label">Your
                                             Name</label>
-                                        <input type="text" id="form-name" required placeholder="e.g. Rahul Sharma"
-                                            class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600 text-sm font-medium transition-colors">
+                                        <input type="text" id="contact-name" name="name" maxlength="100" required
+                                            placeholder="e.g. Rahul Sharma" class="contact__field">
                                     </div>
                                     <div>
-                                        <label for="form-email"
-                                            class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-900">Email
+                                        <label for="contact-email" class="contact__field-label">Email
                                             Address</label>
-                                        <input type="email" id="form-email" required placeholder="rahul@example.com"
-                                            class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600 text-sm font-medium transition-colors">
+                                        <input type="email" id="contact-email" name="email" maxlength="254" required
+                                            placeholder="rahul@example.com" class="contact__field">
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="form-subject"
-                                        class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-900">Subject</label>
-                                    <input type="text" id="form-subject" required
-                                        placeholder="Project / Job Opportunity"
-                                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600 text-sm font-medium transition-colors">
+                                    <label for="contact-subject" class="contact__field-label">Subject</label>
+                                    <input type="text" id="contact-subject" name="subject" maxlength="160" required
+                                        placeholder="Project / Job Opportunity" class="contact__field">
                                 </div>
                                 <div>
-                                    <label for="form-message"
-                                        class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-900">Message</label>
-                                    <textarea id="form-message" rows="4" required
+                                    <label for="contact-message" class="contact__field-label">Message</label>
+                                    <textarea id="contact-message" name="message" rows="4" maxlength="10000" required
                                         placeholder="Write your details here..."
-                                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600 text-sm font-medium resize-none transition-colors"></textarea>
+                                        class="contact__message-field"></textarea>
                                 </div>
 
-                                <p class="contact-note">Your email app will open with your message ready to send.</p>
+                                <p class="contact__note">Send a message directly to my inbox.</p>
 
-                                <button type="submit"
-                                    class="w-full bg-emerald-600 text-white font-extrabold py-4 rounded-lg hover:bg-emerald-700 transition-all uppercase tracking-wider text-xs neo-card">
-                                    Prepare Email <i class="fa-solid fa-arrow-right ml-2"></i>
+                                <button id="contact-submit-button" type="submit" class="neo-card contact__button">
+                                    Send Message <i class="fa-solid fa-arrow-right contact__icon"></i>
                                 </button>
                             </form>
 
-                            <!-- Success Banner -->
-                            <div id="form-success-banner" role="status" aria-live="polite"
-                                class="hidden mt-4 p-4 bg-emerald-600 text-white text-xs font-bold rounded-lg text-center">
-                                <i class="fa-solid fa-circle-check text-emerald-200 mr-2 text-sm"></i> Your email app
-                                should open with the message ready to send.
+                            <iframe id="contact-response-frame" name="contact-response-frame"
+                                class="contact__response-frame" title="Contact form response" aria-hidden="true"
+                                tabindex="-1"></iframe>
+
+                            <!-- Contact Form Status -->
+                            <div id="contact-status" role="status" aria-live="polite" class="contact__status">
+                                Message status will appear here.
                             </div>
                         </div>
                     </div>
@@ -1415,49 +719,41 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-800">
-                <div class="text-center md:text-left">
-                    <a href="#" class="text-2xl font-black tracking-tighter">Nikunjkumar Savaliya</a>
-                    <p class="text-xs text-slate-400 mt-1">BCA Student & Sales Strategist • Navsari, Gujarat</p>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__top">
+                <div class="site-footer__brand">
+                    <a href="#" class="site-footer__link">Nikunjkumar Savaliya</a>
+                    <p class="site-footer__paragraph">BCA Student • Navsari, Gujarat</p>
                 </div>
 
-                <div
-                    class="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-400">
-                    <a href="#about" class="hover:text-white transition-colors">About</a>
-                    <a href="#academics" class="hover:text-white transition-colors">Academics</a>
-                    <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                    <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                    <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
-                    <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <div class="site-footer__nav">
+                    <a href="#about" class="site-footer__nav-link">About</a>
+                    <a href="#academics" class="site-footer__nav-link">Academics</a>
+                    <a href="#experience" class="site-footer__nav-link">Experience</a>
+                    <a href="#projects" class="site-footer__nav-link">Projects</a>
+                    <a href="#testimonials" class="site-footer__nav-link">Testimonials</a>
+                    <a href="#skills" class="site-footer__nav-link">Skills</a>
+                    <a href="#personal-info" class="site-footer__nav-link">Personal Info</a>
+                    <a href="#contact" class="site-footer__nav-link">Contact</a>
                 </div>
 
-                <div class="flex items-center space-x-3">
-                    <a href="mailto:savaliyanikunj93@gmail.com"
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"
-                        aria-label="Email">
-                        <i class="fa-solid fa-envelope text-sm"></i>
+                <div class="site-footer__actions">
+                    <a href="mailto:savaliyanikunj93@gmail.com" class="site-footer__social-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope site-footer__icon"></i>
                     </a>
-                    <a href="tel:+919924184068"
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"
-                        aria-label="Phone">
-                        <i class="fa-solid fa-phone text-sm"></i>
+                    <a href="tel:+919924184068" class="site-footer__social-link" aria-label="Phone">
+                        <i class="fa-solid fa-phone site-footer__icon"></i>
                     </a>
-                    <button onclick="scrollToTop()"
-                        class="w-10 h-10 rounded-full bg-white text-slate-900 font-bold flex items-center justify-center hover:bg-slate-200 transition-all ml-2"
-                        title="Back to top">
-                        <i class="fa-solid fa-arrow-up text-sm"></i>
+                    <button onclick="scrollToTop()" class="site-footer__button" title="Back to top">
+                        <i class="fa-solid fa-arrow-up site-footer__icon"></i>
                     </button>
                 </div>
             </div>
 
-            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-                <p>© <span id="year-display"></span> Nikunjkumar Savaliya. All Rights Reserved.</p>
-                <p class="mt-2 sm:mt-0">Modern Emerald Portfolio Engine</p>
+            <div class="site-footer__bottom">
+                <p>Made by ❤️ by Nikunjkumar Savaliya</p>
             </div>
-        </div>
     </footer>
 
     <!-- AOS JS for Animate-On-Scroll -->
@@ -1472,33 +768,33 @@
         });
 
         // Set Current Year
-        document.getElementById('year-display').textContent = new Date().getFullYear();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Scroll progress indicator
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
+            document.getElementById('scroll-progress-bar').style.width = scrolled + '%';
         });
 
         // Mobile Menu Logic
-        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = document.getElementById('mobile-menu-icon');
+        const mobileLinks = document.querySelectorAll('.js-mobile-link');
 
         mobileBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
+            const isHidden = !mobileMenu.classList.contains('is-open');
             if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
+                mobileMenu.classList.add('is-open');
+
                 menuIcon.classList.remove('fa-bars-staggered');
                 menuIcon.classList.add('fa-xmark');
                 mobileBtn.setAttribute('aria-expanded', 'true');
             } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.remove('is-open');
+
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars-staggered');
                 mobileBtn.setAttribute('aria-expanded', 'false');
@@ -1507,8 +803,8 @@
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.remove('is-open');
+
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars-staggered');
                 mobileBtn.setAttribute('aria-expanded', 'false');
@@ -1516,9 +812,9 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+            if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                mobileMenu.classList.remove('is-open');
+
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars-staggered');
                 mobileBtn.setAttribute('aria-expanded', 'false');
@@ -1528,20 +824,20 @@
 
         // Skill Filter System
         function filterSkills(category, button) {
-            const btns = document.querySelectorAll('.skill-btn');
+            const btns = document.querySelectorAll('.skills__filter-btn');
             btns.forEach(b => {
-                b.classList.remove('bg-slate-900', 'text-white', 'active');
-                b.classList.add('bg-white', 'text-slate-900');
+                b.classList.remove('is-active');
+
                 b.setAttribute('aria-pressed', 'false');
             });
 
             if (button) {
-                button.classList.remove('bg-white', 'text-slate-900');
-                button.classList.add('bg-slate-900', 'text-white', 'active');
+
+                button.classList.add('is-active');
                 button.setAttribute('aria-pressed', 'true');
             }
 
-            const cards = document.querySelectorAll('.skill-card');
+            const cards = document.querySelectorAll('.skills__item');
             cards.forEach(card => {
                 if (category === 'all') {
                     card.style.display = 'block';
@@ -1554,7 +850,7 @@
         }
 
         // Animated Stats Counter
-        const counters = document.querySelectorAll('.counter');
+        const counters = document.querySelectorAll('.academics__counter');
         let counterTriggered = false;
 
         window.addEventListener('scroll', () => {
@@ -1591,20 +887,76 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Form Submission
+        // Gmail API endpoint is added after deploying the Apps Script backend.
+        const GMAIL_CONTACT_WEB_APP_URL = '';
+        const contactForm = document.getElementById('contact-form');
+        const contactResponseFrame = document.getElementById('contact-response-frame');
+        const contactStatus = document.getElementById('contact-status');
+        const contactSubmitButton = document.getElementById('contact-submit-button');
+        const contactRequestId = document.getElementById('contact-request-id');
+        const originalSubmitMarkup = contactSubmitButton.innerHTML;
+        let pendingContactRequestId = null;
+
+        function showContactStatus(message, isError = false) {
+            contactStatus.textContent = message;
+            contactStatus.classList.toggle('is-error', isError);
+            contactStatus.classList.remove('is-hidden');
+        }
+
+        window.addEventListener('message', (e) => {
+            const result = e.data;
+            if (e.source !== contactResponseFrame.contentWindow) return;
+            if (!result || result.type !== 'portfolio-gmail-contact' || result.requestId !== pendingContactRequestId) return;
+            if (!['sent', 'rate_limited', 'invalid', 'error'].includes(result.status)) return;
+
+            pendingContactRequestId = null;
+            contactSubmitButton.disabled = false;
+            contactSubmitButton.innerHTML = originalSubmitMarkup;
+
+            if (result.status === 'sent') {
+                contactForm.reset();
+                showContactStatus('Your message was sent successfully. Thank you for reaching out.');
+            } else if (result.status === 'rate_limited') {
+                showContactStatus('Please wait a moment before sending another message.', true);
+            } else if (result.status === 'invalid') {
+                showContactStatus('Please check your details and try again.', true);
+            } else {
+                showContactStatus('The message could not be sent. Please email savaliyanikunj93@gmail.com directly.', true);
+            }
+        });
+
         function handleForm(e) {
             e.preventDefault();
-            const banner = document.getElementById('form-success-banner');
-            const name = document.getElementById('form-name').value.trim();
-            const email = document.getElementById('form-email').value.trim();
-            const subject = document.getElementById('form-subject').value.trim();
-            const message = document.getElementById('form-message').value.trim();
-            const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-            banner.classList.remove('hidden');
-            window.location.href = `mailto:savaliyanikunj93@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            setTimeout(() => {
-                banner.classList.add('hidden');
-            }, 6000);
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            if (!GMAIL_CONTACT_WEB_APP_URL) {
+                const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+                showContactStatus('Gmail delivery is not connected yet. Opening your email app instead.');
+                window.location.href = `mailto:savaliyanikunj93@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                return false;
+            }
+
+            pendingContactRequestId = window.crypto?.randomUUID
+                ? window.crypto.randomUUID()
+                : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+            contactRequestId.value = pendingContactRequestId;
+            contactForm.action = GMAIL_CONTACT_WEB_APP_URL;
+            contactSubmitButton.disabled = true;
+            contactSubmitButton.textContent = 'Sending…';
+            showContactStatus('Sending your message…');
+            contactForm.submit();
+            const submittedRequestId = pendingContactRequestId;
+            window.setTimeout(() => {
+                if (pendingContactRequestId !== submittedRequestId) return;
+                pendingContactRequestId = null;
+                contactSubmitButton.disabled = false;
+                contactSubmitButton.innerHTML = originalSubmitMarkup;
+                showContactStatus('The message is taking too long to send. Please try again or email directly.', true);
+            }, 25000);
+            return false;
         }
     </script>
 </body>
